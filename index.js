@@ -27,7 +27,8 @@ $("body").keypress(function (e) {
 
 
 $(".btn").click(function () {
-  if(gameover === true){
+
+  if(started === false){
     $("#level-title").text("Start the game before pressing buttons");
   } else {
     var userChosenColor = $(this).attr("id");
@@ -60,7 +61,7 @@ function checkAnswer(currentLevel){
       }, 1000)
     }
   } else {
-    gameover = gameOver();
+    gameOver();
     console.log("wrong");
     
   }
@@ -76,7 +77,6 @@ function gameOver(){
   started = false;
   level = 0;
   gamePattern = [];
-  return true;
 }
 
 
